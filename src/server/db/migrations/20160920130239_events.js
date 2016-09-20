@@ -1,4 +1,3 @@
-
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('events', table => {
     table.increments();
@@ -7,8 +6,8 @@ exports.up = function(knex, Promise) {
     table.boolean('over_21').notNullable().unique();
     table.datetime('start_datetime').notNullable();
     table.datetime('end_datetime').notNullable();
-    table.integer('event_id');
-    table.foreign('event_id').references('events.id');
+    table.integer('venue_id');
+    table.foreign('venue_id').references('venues.id');
   });
 };
 
