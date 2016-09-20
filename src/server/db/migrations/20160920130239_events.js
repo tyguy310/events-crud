@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
     table.increments();
     table.string('title').notNullable();
     table.string('description').notNullable();
-    table.boolean('over_21').notNullable().unique();
+    table.boolean('over_21').notNullable();
     table.datetime('start_datetime').notNullable();
     table.datetime('end_datetime').notNullable();
     table.integer('venue_id');

@@ -1,13 +1,19 @@
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('attendees_tickets').del()
     .then(function () {
       return Promise.all([
         // Inserts seed entries
-        knex('table_name').insert({id: 1, colName: 'rowValue1'}),
-        knex('table_name').insert({id: 2, colName: 'rowValue2'}),
-        knex('table_name').insert({id: 3, colName: 'rowValue3'})
+        knex('attendees_tickets').insert({
+          ticket_id: 1,
+          attendee_id: 1}),
+        knex('attendees_tickets').insert({
+          ticket_id: 2,
+          attendee_id: 2}),
+        knex('attendees_tickets').insert({
+          ticket_id: 3,
+          attendee_id: 3})
       ]);
     });
 };
