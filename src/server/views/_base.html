@@ -20,6 +20,20 @@
   <body>
       {% block content %}
       {% endblock %}
+      <nav class="fluid-container">
+      <div class="wrapper container">
+        <h1><a href="/">{{title}}</a></h1>
+        <ul>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/attendees">Attendees</a></li>
+          <li><a href="/venues">Venues</a></li>
+          <!-- {%if admin == true%}
+          <li>{{sessionName}}</li>
+          {%endif%}
+          <li><a href="/logout"></a></li> -->
+        </ul>
+      </div>
+    </nav>
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
