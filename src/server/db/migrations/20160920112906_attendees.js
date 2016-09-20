@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     table.string('preferred_name').notNullable();
     table.string('last_name').notNullable();
     table.string('birthday').notNullable();
-    table.string('email').notNullable().unique();
+    table.string('email').notNullable();
   });
 };
 
