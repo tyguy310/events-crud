@@ -19,15 +19,8 @@
 </div>
 
 <div class="current">
-  <h2>All Events</h2>
-    {%for event in data%}
-  <div class="all col-xs-4">
-    <a href="/events/{{event.id}}" class="eventLink">{{event.title}}</a>
-    <p><a href="/events/{{event.id}}"class="restaurantLink" >{{event.description}}</a>
-    </p>
-    <a href="/events/{{event.id}}/register">Register Now!</a>
+  <h2>{{event[0].title}}</h2>
   </div>
-    {%endfor%}
 </div>
 </nav>
 

@@ -1,18 +1,18 @@
 const express = require('express');
 const router = express.Router();
+const knex = require('../db/knex');
 
 const indexController = require('../controllers/index');
 
-router.get('/', function (req, res, next) {
+router.get('/', (req, res, next) => {
   const renderObject = {};
   renderObject.title = 'Event App';
-  indexController.sum(1, 2, (error, results) => {
-    if (error) return next(error);
-    if (results) {
-      renderObject.sum = results;
-      res.render('index', renderObject);
-    }
-  });
+  knex('events')
+  .then(data => {
+    renderObject.data = data;
+    res.render('index', renderObject);
+  })
+  .catch(err => next(err));
 });
 
 module.exports = router;
