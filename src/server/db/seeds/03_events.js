@@ -6,7 +6,7 @@ exports.seed = function(knex, Promise) {
       return Promise.all([
         // Inserts seed entries
         knex('events').insert({
-          title: 'zero tolerance',
+          title: 'Zero Tolerance',
           description: 'Quality-focused fault-tolerant moratorium',
           over_21: true,
           start_datetime: '2017-01-01 00:00:00',
@@ -14,7 +14,7 @@ exports.seed = function(knex, Promise) {
           venue_id: 3
         }),
         knex('events').insert({
-          title: 'architecture',
+          title: 'Architecture',
           description: 'User-centric secondary migration',
           over_21: true,
           start_datetime: '2017-04-19 17:30:00',
@@ -22,7 +22,7 @@ exports.seed = function(knex, Promise) {
           venue_id: 1
         }),
         knex('events').insert({
-          title: 'next generation',
+          title: 'Next Generation',
           description: 'Upgradable responsive internet solution',
           over_21: true,
           start_datetime: '2017-08-06 08:00:00',

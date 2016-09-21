@@ -20,16 +20,21 @@ router.get('/:id', (req, res, next) => {
   const renderObject = {};
   const eventID = req.params.id;
 
-  let eventPromise = knex('events')
-  .where('id', eventID)
+  let eventVenue = knex.select('*')
+  .from('venues')
+  .innerJoin('events', 'venues.id', 'events.venue_id')
   .then((data) => {
-    renderObject.event = data;
-  })
+      console.log(data);
+      renderObject.joinData = data;
+    })
   .catch(err => next(err));
-  promiseArray.push(eventPromise);
+  promiseArray.push(eventVenue);
+
+  // ALL Promisees
 
   Promise.all(promiseArray)
   .then((resPromises) => {
+    // console.log(renderObject);
     res.render('event', renderObject);
   })
   .catch(err => next(err));

@@ -24,7 +24,7 @@ exports.seed = function(knex, Promise) {
           zip: '30092'
         }),
         knex('venues').insert({
-          name: 'rowValue3',
+          name: 'Moratorium',
           capacity: 71,
           line_1: '31650 Alpine Place',
           line_2: '',
