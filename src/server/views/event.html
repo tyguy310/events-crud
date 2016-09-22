@@ -19,10 +19,19 @@
 </div>
 
 <div class="Event">
-  <h2>{{title}}</h2>
+  <h2>{{event.title}}</h2>
   <p>{{event.description}}</p>
+  {% if event.capacity > count.count %}
+  <a href="/events/{{event.id}}/register">Register Now!</a>
+  {% endif %}
+  {% if event.capacity <= count.count %}
+  <p>SOLD OUT!</p>
+  {% endif %}
 </div>
 <div class="venueInfo">
+  <h2>{{event.name}}</h2>
+  <p>{{event.line_1}}</p>
+  <p>{{event.city}}, {{event.state}} {{event.zip}}</p>
 </div>
 </nav>
 

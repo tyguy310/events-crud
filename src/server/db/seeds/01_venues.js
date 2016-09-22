@@ -25,7 +25,7 @@ exports.seed = function(knex, Promise) {
         }),
         knex('venues').insert({
           name: 'Moratorium',
-          capacity: 71,
+          capacity: 1,
           line_1: '31650 Alpine Place',
           line_2: '',
           city: 'Inglewood',
