@@ -17,6 +17,7 @@
     <li><a href="/logout"></a></li> -->
   </ul>
 </div>
+</nav>
 
 <div class="current">
   <h2>All Events</h2>
@@ -25,10 +26,9 @@
     <a href="/events/{{event.id}}" class="eventLink">{{event.title}}</a>
     <p><a href="/events/{{event.id}}"class="restaurantLink" >{{event.description}}</a>
     </p>
-    <a href="/events/{{event.id}}/register">Register Now!</a>
+    <!-- <a href="/events/{{event.id}}/register">Register Now!</a> -->
   </div>
     {%endfor%}
 </div>
-</nav>
 
 {% endblock %}

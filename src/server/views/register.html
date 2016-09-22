@@ -1,0 +1,84 @@
+{% extends "_base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+<nav class="fluid-container">
+  <div class="wrapper container">
+    <h1><a href="/">{{title}}</a></h1>
+    <ul>
+      <li><a href="/events">Events</a></li>
+      <li><a href="/attendees">Attendees</a></li>
+      <li><a href="/venues">Venues</a></li>
+      <!-- {%if admin == true%}
+      <li>{{sessionName}}</li>
+      {%endif%}
+      <li><a href="/logout"></a></li> -->
+    </ul>
+  </div>
+</nav>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="Event col-xs-6">
+      <h2>{{event.title}}</h2>
+      <p>{{event.description}}</p>
+    </div>
+    <div class="venueInfo col-xs-6">
+      <h2>{{event.name}}</h2>
+      <p>{{event.line_1}}</p>
+      <p>{{event.city}}, {{event.state}} {{event.zip}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label for="preferred_name" class="col-sm-2 control-label">Preferred Name</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="preferred_name" placeholder="Preferred Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="last_name" class="col-sm-2 control-label">Last Name</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email" class="col-sm-2 control-label">Email</label>
+      <div class="col-sm-6">
+        <input type="email" class="form-control" id="email" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="ticket" class="col-sm-1 col-sm-offset-1 control-label">Tickets</label>
+      <div class="col-sm-2">
+        <select class="form-control" id="ticket">
+          {% for ticket in tickets %}
+          <option value="{{ticket.price}}">{{ticket.name}} - {{ticket.price}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <label for="quantity" class="col-sm-1 control-label">Quantity</label>
+      <div class="col-sm-1">
+        <select class="form-control" id="quantity">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-6">
+        <button type="submit" class="btn btn-default">Register</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

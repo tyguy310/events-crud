@@ -21,13 +21,18 @@
 <!-- Current Events -->
 
 <div class="current">
-  <h2>Current Events</h2>
+  <h2>Upcoming Events</h2>
     {%for event in data%}
   <div class="current col-xs-4">
     <a href="/events/{{event.id}}" class="eventLink">{{event.title}}</a>
     <p><a href="/events/{{event.id}}"class="restaurantLink" >{{event.description}}</a>
     </p>
+    {% if event.capacity > count.count %}
     <a href="/events/{{event.id}}/register">Register Now!</a>
+    {% endif %}
+    {% if event.capacity <= count.count %}
+    <p>SOLD OUT!</p>
+    {% endif %}
   </div>
     {%endfor%}
 </div>
